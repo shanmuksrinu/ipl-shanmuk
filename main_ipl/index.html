@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>IPL-Project 2019</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>  
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/data.js"></script>
+  <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="./back_end/allcharts_data.js"></script>
+  <style>
+ 
+ @media (min-width: 768px) {
+      .modal-xl {
+        width: 90%;
+       max-width:1200px;
+      }
+    }
+    .carousel-inner{
+    height: 500px;
+}
+
+.carousel-inner>.active{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.carousel-inner>.next,
+.carousel-inner>.prev{
+    top: 50%;
+    transform: translateY(-50%);
+}
+body, html {
+  height: 100%;
+}
+.bg {
+  /* The image used */
+  background-image: url("http://ipl2019livestream.com/wp-content/uploads/2018/09/2019-ipl-wallpapers-download.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+    </style>
+</head>
+<body class="bg">
+
+<div class="container">
+  <div class="row blog justify-center">
+      <div class="col-md-12">
+          <div id="blogCarousel" class="carousel slide" data-ride="carousel">   
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <div class="row">
+                          <div class="col-md-3">
+                              <a href="#" class="btn btn-info btn-lg" data-toggle="modal" data-target="#model1">                                
+                                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_htnYulviu7L8IEzoM1JEq6jfM3eE-9qMlcToVuw8E_30IZBz9g" alt="Image" style="max-width:100%;">
+                                  <div class="centered"> Year wise Matches</div>                               
+                                </a>
+                          </div>
+                          <div class="col-md-3">
+                              <a href="#" class="btn btn-info btn-lg"   data-toggle="modal" data-target="#model2">
+                                  <img src="http://st1.photogallery.ind.sh/wp-content/uploads/indiacom/players-of-sunrisers-hyderabad-celebrate-after-winning-ipl-match-201605-1464588145-300x300.jpg" alt="Image" style="max-width:100%;">
+                                  <div class="centered"> Year wise Winnings by Team</div>
+                              </a>
+                          </div>
+                          <div class="col-md-3">
+                              <a href="#" class="btn btn-info btn-lg" data-toggle="modal" data-target="#model3">
+                                  <img src="http://cdn.24.co.za/files/Cms/General/d/6995/38e23a2d1ce8471984b3a02ed1a21119.jpg" alt="Image" style="max-width:100%;">
+                                  <div class="centered"> Team wise Extras in 2016</div>
+                                </a>
+                          </div>
+                          <div class="col-md-3">
+                              <a href="#" class="btn btn-info btn-lg" data-toggle="modal" data-target="#model4">
+                                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR79XDmfcjSqWCpbCPS3epz8zkJuvLhNc09RuGMlJ7mcZjSGJqB" alt="Image" style="max-width:100%;">
+                                  <div class="centered">Top 10 Bowlers in 2015</div>
+                              </a>
+                          </div>
+                      </div>
+                      <!--.row-->
+                  </div>
+
+              </div>
+              <!--.carousel-inner-->
+          </div>
+          <!--.Carousel-->
+
+      </div>
+  </div>
+
+  <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" id="model1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div id="matches_count_seasons" style="min-width: 310px; height: 400px; margin: 0 auto"></div>  
+              </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" id="model2" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div id="team_win_count" style="min-width: 310px; height: 400px; margin: 0 auto"></div>  
+              </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" id="model3" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div id="Extra_runs_team" style="min-width: 310px; height: 400px; margin: 0 auto"></div>  
+              </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" id="model4" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div id="Economy_data" style="min-width: 310px; height: 400px; margin: 0 auto"></div>  
+              </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
